@@ -1,0 +1,18 @@
+services:
+  db: 
+    image: pgvector/pgvector:0.8.7-pg17-trixie
+
+    environment:
+      POSTGRES_USER: knowact
+      POSTGRES_PASSWORD: knowact
+      POSTGRES_DB: knowact
+
+    ports:
+      - "127.0.0.1:5433:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+
+volumes:
+  postgres_data:
